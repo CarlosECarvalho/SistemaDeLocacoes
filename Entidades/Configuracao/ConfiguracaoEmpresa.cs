@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace SistemaDeLocacoes.Entidades.Configuracao
 {
     public class ConfiguracaoEmpresa : IEntityTypeConfiguration<Empresa>
     {
-        public void Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder<Empresa> builder)
+        public void Configure(EntityTypeBuilder<Empresa> builder)
         {
             builder.ToTable("Empresas");
             builder.HasKey(x => x.Id);
