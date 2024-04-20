@@ -11,7 +11,7 @@ using SistemaDeLocacoes.Database;
 
 namespace SistemaDeLocacoes.Migrations
 {
-    [DbContext(typeof(SistemaContext))]
+    [DbContext(typeof(DatabaseContext))]
     [Migration("20240413163024_InicialDatabase")]
     partial class InicialDatabase
     {

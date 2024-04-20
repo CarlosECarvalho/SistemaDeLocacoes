@@ -10,22 +10,7 @@ namespace SistemaDeLocacoes.Repositorio
 {
     public class EnderecoEmpresaRepository : IEnderecoEmpresaRepository
     {
-        public void Adicionar(EnderecoEmpresa enderecoEmpresa)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Atualizar(EnderecoEmpresa enderecoEmpresa)
-        {
-            throw new NotImplementedException();
-        }
-
-        public EnderecoEmpresa Get(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<EnderecoEmpresa> Get()
+        public Task AddAsync(EnderecoEmpresa enderecoEmpresa)
         {
             throw new NotImplementedException();
         }

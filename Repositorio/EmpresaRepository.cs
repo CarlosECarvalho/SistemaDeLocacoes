@@ -1,35 +1,17 @@
 ﻿using SistemaDeLocacoes.Entidades;
 using SistemaDeLocacoes.Repositorio.Contratos;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SistemaDeLocacoes.Repositorio
 {
     public class EmpresaRepository : IEmpresaRepository
     {
-        public void Adicionar(Empresa empresa)
-        {
-            throw new NotImplementedException();
-        }
+        private readonly IRepositoryBase<Empresa> _repositoryBase;
+        public EmpresaRepository(IRepositoryBase<Empresa> repositoryBase) => _repositoryBase = repositoryBase;
 
-        public void Atualizar(Empresa empresa)
+        public async Task AddAsync(Empresa empresa)
         {
-            throw new NotImplementedException();
-        }
-
-        public Empresa Get(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<Empresa> Get()
-        {
-            throw new NotImplementedException();
+            await _repositoryBase.AddAsync(empresa);
         }
     }
-
 }
 

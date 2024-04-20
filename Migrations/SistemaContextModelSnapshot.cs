@@ -10,7 +10,7 @@ using SistemaDeLocacoes.Database;
 
 namespace SistemaDeLocacoes.Migrations
 {
-    [DbContext(typeof(SistemaContext))]
+    [DbContext(typeof(DatabaseContext))]
     partial class SistemaContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
