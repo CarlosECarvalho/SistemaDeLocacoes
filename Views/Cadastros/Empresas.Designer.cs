@@ -44,14 +44,12 @@
             mk_CEP = new MaskedTextBox();
             mk_Tel1 = new MaskedTextBox();
             mk_Tel2 = new MaskedTextBox();
-            mk_Email = new MaskedTextBox();
             dg_EnderecosCliente = new DataGridView();
             OptPessoaF = new RadioButton();
             OptPessoaJ = new RadioButton();
             bt_Novo = new Button();
             bt_Editar = new Button();
             bt_Salvar = new Button();
-            bt_Inativar = new Button();
             cmb_Descricao = new ComboBox();
             chk_Cliente = new CheckBox();
             chk_Fornecedor = new CheckBox();
@@ -71,6 +69,7 @@
             tx_Pais = new TextBox();
             cmb_Estado = new ComboBox();
             gb_Contatos = new GroupBox();
+            tx_Email = new TextBox();
             tx_Pessoa = new TextBox();
             gb_Endereco = new GroupBox();
             mk_DataAlteracao = new MaskedTextBox();
@@ -78,6 +77,9 @@
             lb_Cod = new Label();
             tx_Cod = new TextBox();
             bt_ListarTodos = new Button();
+            bt_ListarEndereco = new Button();
+            bt_BuscarId = new Button();
+            bt_Cancelar = new Button();
             ((System.ComponentModel.ISupportInitialize)dg_EnderecosCliente).BeginInit();
             gb_Contatos.SuspendLayout();
             gb_Endereco.SuspendLayout();
@@ -104,7 +106,7 @@
             // lb_CNPJ_CPF
             // 
             lb_CNPJ_CPF.AutoSize = true;
-            lb_CNPJ_CPF.Location = new Point(111, 3);
+            lb_CNPJ_CPF.Location = new Point(187, 3);
             lb_CNPJ_CPF.Name = "lb_CNPJ_CPF";
             lb_CNPJ_CPF.Size = new Size(37, 15);
             lb_CNPJ_CPF.TabIndex = 2;
@@ -189,14 +191,14 @@
             // 
             // tx_Endereco
             // 
-            tx_Endereco.Location = new Point(86, 33);
+            tx_Endereco.Location = new Point(83, 33);
             tx_Endereco.Name = "tx_Endereco";
-            tx_Endereco.Size = new Size(289, 23);
+            tx_Endereco.Size = new Size(297, 23);
             tx_Endereco.TabIndex = 14;
             // 
             // mk_CPF_CNPJ
             // 
-            mk_CPF_CNPJ.Location = new Point(114, 17);
+            mk_CPF_CNPJ.Location = new Point(190, 17);
             mk_CPF_CNPJ.Name = "mk_CPF_CNPJ";
             mk_CPF_CNPJ.Size = new Size(131, 23);
             mk_CPF_CNPJ.TabIndex = 15;
@@ -220,18 +222,11 @@
             // 
             // mk_Tel2
             // 
-            mk_Tel2.Location = new Point(98, 29);
+            mk_Tel2.Location = new Point(98, 30);
             mk_Tel2.Mask = "(99)00000-0000";
             mk_Tel2.Name = "mk_Tel2";
             mk_Tel2.Size = new Size(90, 23);
             mk_Tel2.TabIndex = 19;
-            // 
-            // mk_Email
-            // 
-            mk_Email.Location = new Point(194, 30);
-            mk_Email.Name = "mk_Email";
-            mk_Email.Size = new Size(230, 23);
-            mk_Email.TabIndex = 20;
             // 
             // dg_EnderecosCliente
             // 
@@ -247,7 +242,7 @@
             // OptPessoaF
             // 
             OptPessoaF.AutoSize = true;
-            OptPessoaF.Location = new Point(10, 4);
+            OptPessoaF.Location = new Point(14, 6);
             OptPessoaF.Name = "OptPessoaF";
             OptPessoaF.Size = new Size(93, 19);
             OptPessoaF.TabIndex = 23;
@@ -259,7 +254,7 @@
             // OptPessoaJ
             // 
             OptPessoaJ.AutoSize = true;
-            OptPessoaJ.Location = new Point(10, 21);
+            OptPessoaJ.Location = new Point(14, 23);
             OptPessoaJ.Name = "OptPessoaJ";
             OptPessoaJ.Size = new Size(104, 19);
             OptPessoaJ.TabIndex = 24;
@@ -270,39 +265,33 @@
             // 
             // bt_Novo
             // 
-            bt_Novo.Location = new Point(607, 203);
+            bt_Novo.Location = new Point(14, 202);
             bt_Novo.Name = "bt_Novo";
-            bt_Novo.Size = new Size(89, 29);
+            bt_Novo.Size = new Size(89, 28);
             bt_Novo.TabIndex = 25;
             bt_Novo.Text = "Novo";
             bt_Novo.UseVisualStyleBackColor = true;
+            bt_Novo.Click += bt_Novo_Click;
             // 
             // bt_Editar
             // 
-            bt_Editar.Location = new Point(794, 203);
+            bt_Editar.Location = new Point(102, 202);
             bt_Editar.Name = "bt_Editar";
-            bt_Editar.Size = new Size(86, 28);
+            bt_Editar.Size = new Size(89, 28);
             bt_Editar.TabIndex = 26;
             bt_Editar.Text = "Editar";
             bt_Editar.UseVisualStyleBackColor = true;
+            bt_Editar.Click += bt_Editar_Click;
             // 
             // bt_Salvar
             // 
-            bt_Salvar.Location = new Point(886, 202);
+            bt_Salvar.Location = new Point(279, 202);
             bt_Salvar.Name = "bt_Salvar";
-            bt_Salvar.Size = new Size(86, 29);
+            bt_Salvar.Size = new Size(86, 28);
             bt_Salvar.TabIndex = 27;
             bt_Salvar.Text = "Salvar";
             bt_Salvar.UseVisualStyleBackColor = true;
-            // 
-            // bt_Inativar
-            // 
-            bt_Inativar.Location = new Point(702, 203);
-            bt_Inativar.Name = "bt_Inativar";
-            bt_Inativar.Size = new Size(86, 29);
-            bt_Inativar.TabIndex = 28;
-            bt_Inativar.Text = "Inativar";
-            bt_Inativar.UseVisualStyleBackColor = true;
+            bt_Salvar.Click += bt_Salvar_Click;
             // 
             // cmb_Descricao
             // 
@@ -346,15 +335,15 @@
             // 
             // tx_Categoria
             // 
-            tx_Categoria.Location = new Point(11, 58);
+            tx_Categoria.Location = new Point(191, 58);
             tx_Categoria.Name = "tx_Categoria";
-            tx_Categoria.Size = new Size(117, 23);
+            tx_Categoria.Size = new Size(127, 23);
             tx_Categoria.TabIndex = 33;
             // 
             // lb_Categoria
             // 
             lb_Categoria.AutoSize = true;
-            lb_Categoria.Location = new Point(10, 43);
+            lb_Categoria.Location = new Point(190, 43);
             lb_Categoria.Name = "lb_Categoria";
             lb_Categoria.Size = new Size(61, 15);
             lb_Categoria.TabIndex = 34;
@@ -432,23 +421,23 @@
             // 
             // tx_Bairro
             // 
-            tx_Bairro.Location = new Point(435, 33);
+            tx_Bairro.Location = new Point(433, 33);
             tx_Bairro.Name = "tx_Bairro";
-            tx_Bairro.Size = new Size(108, 23);
+            tx_Bairro.Size = new Size(111, 23);
             tx_Bairro.TabIndex = 43;
             // 
             // tx_Cidade
             // 
-            tx_Cidade.Location = new Point(545, 33);
+            tx_Cidade.Location = new Point(544, 33);
             tx_Cidade.Name = "tx_Cidade";
-            tx_Cidade.Size = new Size(148, 23);
+            tx_Cidade.Size = new Size(151, 23);
             tx_Cidade.TabIndex = 44;
             // 
             // tx_Pais
             // 
-            tx_Pais.Location = new Point(761, 33);
+            tx_Pais.Location = new Point(759, 33);
             tx_Pais.Name = "tx_Pais";
-            tx_Pais.Size = new Size(105, 23);
+            tx_Pais.Size = new Size(113, 23);
             tx_Pais.TabIndex = 45;
             // 
             // cmb_Estado
@@ -461,6 +450,7 @@
             // 
             // gb_Contatos
             // 
+            gb_Contatos.Controls.Add(tx_Email);
             gb_Contatos.Controls.Add(tx_Pessoa);
             gb_Contatos.Controls.Add(mk_Tel1);
             gb_Contatos.Controls.Add(lb_Tel1);
@@ -468,7 +458,6 @@
             gb_Contatos.Controls.Add(lb_Email);
             gb_Contatos.Controls.Add(lb_PessoaRecado);
             gb_Contatos.Controls.Add(mk_Tel2);
-            gb_Contatos.Controls.Add(mk_Email);
             gb_Contatos.Location = new Point(5, 56);
             gb_Contatos.Name = "gb_Contatos";
             gb_Contatos.Padding = new Padding(0);
@@ -476,6 +465,13 @@
             gb_Contatos.TabIndex = 47;
             gb_Contatos.TabStop = false;
             gb_Contatos.Text = "Contatos:";
+            // 
+            // tx_Email
+            // 
+            tx_Email.Location = new Point(191, 30);
+            tx_Email.Name = "tx_Email";
+            tx_Email.Size = new Size(237, 23);
+            tx_Email.TabIndex = 22;
             // 
             // tx_Pessoa
             // 
@@ -521,6 +517,9 @@
             // 
             // mk_DataAlteracao
             // 
+            mk_DataAlteracao.AllowPromptAsInput = false;
+            mk_DataAlteracao.BackColor = Color.White;
+            mk_DataAlteracao.Enabled = false;
             mk_DataAlteracao.Location = new Point(872, 33);
             mk_DataAlteracao.Mask = "00/00/0000";
             mk_DataAlteracao.Name = "mk_DataAlteracao";
@@ -540,7 +539,7 @@
             // lb_Cod
             // 
             lb_Cod.AutoSize = true;
-            lb_Cod.Location = new Point(248, 1);
+            lb_Cod.Location = new Point(117, 1);
             lb_Cod.Name = "lb_Cod";
             lb_Cod.Size = new Size(32, 15);
             lb_Cod.TabIndex = 49;
@@ -548,33 +547,66 @@
             // 
             // tx_Cod
             // 
-            tx_Cod.Location = new Point(251, 17);
+            tx_Cod.BackColor = Color.White;
+            tx_Cod.Enabled = false;
+            tx_Cod.Location = new Point(120, 17);
             tx_Cod.Name = "tx_Cod";
             tx_Cod.Size = new Size(65, 23);
             tx_Cod.TabIndex = 50;
+            tx_Cod.Text = "1";
             // 
             // bt_ListarTodos
             // 
             bt_ListarTodos.Font = new Font("Segoe UI", 9F);
-            bt_ListarTodos.Location = new Point(13, 202);
+            bt_ListarTodos.Location = new Point(824, 202);
             bt_ListarTodos.Name = "bt_ListarTodos";
-            bt_ListarTodos.Size = new Size(96, 28);
+            bt_ListarTodos.Size = new Size(148, 28);
             bt_ListarTodos.TabIndex = 51;
-            bt_ListarTodos.Text = "Listar Todos";
+            bt_ListarTodos.Text = "Listar Todos Cadastros";
             bt_ListarTodos.UseVisualStyleBackColor = true;
+            // 
+            // bt_ListarEndereco
+            // 
+            bt_ListarEndereco.Location = new Point(676, 202);
+            bt_ListarEndereco.Name = "bt_ListarEndereco";
+            bt_ListarEndereco.Size = new Size(148, 28);
+            bt_ListarEndereco.TabIndex = 52;
+            bt_ListarEndereco.Text = "Listar Endereços Empresa";
+            bt_ListarEndereco.UseVisualStyleBackColor = true;
+            // 
+            // bt_BuscarId
+            // 
+            bt_BuscarId.Location = new Point(528, 202);
+            bt_BuscarId.Name = "bt_BuscarId";
+            bt_BuscarId.Size = new Size(148, 28);
+            bt_BuscarId.TabIndex = 53;
+            bt_BuscarId.Text = "Buscar pelo Código";
+            bt_BuscarId.UseVisualStyleBackColor = true;
+            // 
+            // bt_Cancelar
+            // 
+            bt_Cancelar.Location = new Point(191, 202);
+            bt_Cancelar.Name = "bt_Cancelar";
+            bt_Cancelar.Size = new Size(89, 28);
+            bt_Cancelar.TabIndex = 54;
+            bt_Cancelar.Text = "Cancelar";
+            bt_Cancelar.UseVisualStyleBackColor = true;
+            bt_Cancelar.Click += bt_Cancelar_Click;
             // 
             // Empresas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(984, 561);
+            Controls.Add(bt_Cancelar);
+            Controls.Add(bt_BuscarId);
+            Controls.Add(bt_ListarEndereco);
             Controls.Add(bt_ListarTodos);
             Controls.Add(tx_Cod);
             Controls.Add(lb_Cod);
             Controls.Add(gb_Endereco);
             Controls.Add(lb_Categoria);
             Controls.Add(tx_Categoria);
-            Controls.Add(bt_Inativar);
             Controls.Add(bt_Salvar);
             Controls.Add(bt_Editar);
             Controls.Add(bt_Novo);
@@ -590,6 +622,7 @@
             Name = "Empresas";
             StartPosition = FormStartPosition.CenterParent;
             Text = "Empresas";
+            Load += Empresas_Load;
             ((System.ComponentModel.ISupportInitialize)dg_EnderecosCliente).EndInit();
             gb_Contatos.ResumeLayout(false);
             gb_Contatos.PerformLayout();
@@ -617,7 +650,6 @@
         private MaskedTextBox mk_CEP;
         private MaskedTextBox mk_Tel1;
         private MaskedTextBox mk_Tel2;
-        private MaskedTextBox mk_Email;
         private MaskedTextBox maskedTextBox7;
         private GroupBox groupBox1;
         private DataGridView dg_EnderecosCliente;
@@ -626,7 +658,6 @@
         private Button bt_Novo;
         private Button bt_Editar;
         private Button bt_Salvar;
-        private Button bt_Inativar;
         private ComboBox cmb_Descricao;
         private CheckBox chk_Cliente;
         private CheckBox chk_Fornecedor;
@@ -653,5 +684,9 @@
         private Label lb_Cod;
         private TextBox tx_Cod;
         private Button bt_ListarTodos;
+        private Button bt_ListarEndereco;
+        private Button bt_BuscarId;
+        private TextBox tx_Email;
+        private Button bt_Cancelar;
     }
 }
